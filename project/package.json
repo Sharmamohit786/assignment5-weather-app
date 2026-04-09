@@ -1,0 +1,10 @@
+{
+  "name": "assignment5-weather-insights",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal client-server weather insights app for Assignment 5.",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test --test-isolation=none"
+  }
+}
