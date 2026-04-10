@@ -1,0 +1,14 @@
+{
+  "city": "Toronto",
+  "country": "CA",
+  "retrievedAt": "2026-04-10T00:15:10.000Z",
+  "temperatureC": 15.5,
+  "feelsLikeC": 14.59,
+  "humidity": 57,
+  "windKph": 9,
+  "condition": "Clouds",
+  "conditionDescription": "scattered clouds",
+  "comfortLevel": "moderate",
+  "isOutdoorFriendly": true,
+  "icon": "03n"
+}

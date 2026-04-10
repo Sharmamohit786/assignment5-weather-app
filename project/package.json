@@ -6,5 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "node --test --test-isolation=none"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1"
   }
 }

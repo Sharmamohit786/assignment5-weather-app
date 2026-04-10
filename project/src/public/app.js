@@ -8,7 +8,7 @@ function initWeatherApp({ document, fetchImpl = fetch }) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    statusNode.textContent = 'Loading weather...';
+    statusNode.textContent = 'Loading weather.';
     weatherNode.innerHTML = '';
     summaryNode.innerHTML = '';
 
@@ -19,17 +19,23 @@ function initWeatherApp({ document, fetchImpl = fetch }) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          city: cityInput.value.trim(),
+          city: cityInput.value,
         }),
       });
 
       const payload = await response.json();
+
+      if (!response.ok || !payload.ok || !payload.weather) {
+        throw new Error(payload.error || 'Unable to load weather.');
+      }
+
       weatherNode.innerHTML = renderWeather(payload.weather);
       summaryNode.innerHTML = renderSummary(payload.summaryStatus, payload.summary);
       statusNode.textContent = 'Ready';
     } catch (error) {
       statusNode.textContent = 'Unable to submit request.';
-      summaryNode.textContent = error.message;
+      weatherNode.innerHTML = '<p>No weather details available.</p>';
+      summaryNode.innerHTML = `<p>${escapeHtml(error.message || 'Something went wrong.')}</p>`;
     }
   });
 }
@@ -43,7 +49,8 @@ function renderWeather(weather) {
       <dt>Feels Like</dt><dd>${escapeHtml(String(weather.feelsLikeC))} C</dd>
       <dt>Humidity</dt><dd>${escapeHtml(String(weather.humidity))}%</dd>
       <dt>Wind</dt><dd>${escapeHtml(String(weather.windKph))} kph</dd>
-      <dt>Condition</dt><dd>${escapeHtml(weather.condition)} (${escapeHtml(weather.conditionDescription)})</dd>
+      <dt>Condition</dt><dd>${escapeHtml(weather.condition)}</dd>
+      <dt>Description</dt><dd>${escapeHtml(weather.conditionDescription)}</dd>
       <dt>Comfort</dt><dd>${escapeHtml(weather.comfortLevel)}</dd>
       <dt>Outdoor Friendly</dt><dd>${weather.isOutdoorFriendly ? 'Yes' : 'No'}</dd>
     </dl>
@@ -51,14 +58,14 @@ function renderWeather(weather) {
 }
 
 function renderSummary(summaryStatus, summary) {
-  const title = summaryStatus === 'available' ? 'AI Summary' : 'Fallback Summary';
-  const suggestions = Array.isArray(summary.suggestions) && summary.suggestions.length > 0
-    ? `<ul>${summary.suggestions.map((suggestion) => `<li>${escapeHtml(suggestion)}</li>`).join('')}</ul>`
-    : '<p>No activity suggestions are available.</p>';
+  const heading = summaryStatus === 'available' ? 'AI Summary' : 'Fallback Summary';
+  const suggestions = Array.isArray(summary?.suggestions) && summary.suggestions.length > 0
+    ? `<ul>${summary.suggestions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    : '';
 
   return `<section class="summary-card">
-    <h2>${title}</h2>
-    <p>${escapeHtml(summary.text)}</p>
+    <h2>${heading}</h2>
+    <p>${escapeHtml(summary?.text || 'No summary available.')}</p>
     ${suggestions}
   </section>`;
 }
@@ -72,10 +79,8 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-if (typeof window !== 'undefined') {
-  window.addEventListener('DOMContentLoaded', () => {
-    initWeatherApp({ document: window.document, fetchImpl: window.fetch.bind(window) });
-  });
+if (typeof document !== 'undefined') {
+  initWeatherApp({ document });
 }
 
 module.exports = {

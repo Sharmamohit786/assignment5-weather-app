@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { createServer } = require('./server');
 const { loadConfig } = require('./config');
 const { createWeatherProvider } = require('./weather-provider');

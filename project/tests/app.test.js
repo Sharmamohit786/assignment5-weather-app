@@ -56,7 +56,7 @@ test('submitting the form shows loading state and posts the city to /weather', a
 
   const submission = form.submit();
 
-  assert.equal(statusNode.textContent, 'Loading weather...');
+  assert.equal(statusNode.textContent, 'Loading weather.');
 
   await submission;
 
@@ -68,7 +68,8 @@ test('submitting the form shows loading state and posts the city to /weather', a
   assert.equal(statusNode.textContent, 'Ready');
   assert.match(weatherNode.innerHTML, /Toronto, CA/);
   assert.match(weatherNode.innerHTML, /Temperature<\/dt><dd>12\.3 C/);
-  assert.match(weatherNode.innerHTML, /Condition<\/dt><dd>Clouds \(broken clouds\)/);
+ assert.match(weatherNode.innerHTML, /Condition<\/dt><dd>Clouds<\/dd>/);
+ assert.match(weatherNode.innerHTML, /Description<\/dt><dd>broken clouds<\/dd>/);
   assert.match(summaryNode.innerHTML, /AI Summary/);
   assert.match(summaryNode.innerHTML, /Toronto looks moderate today\./);
   assert.match(summaryNode.innerHTML, /Take a light jacket/);
