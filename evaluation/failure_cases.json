@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "case_6",
+    "failure_reason": "Invalid city input caused unclear response.",
+    "before_fix": "Generic failure message.",
+    "after_fix": "Clear message asking user to enter valid city."
+  },
+  {
+    "case_id": "case_7",
+    "failure_reason": "Mist condition did not trigger visibility warning.",
+    "before_fix": "Only general summary.",
+    "after_fix": "Added visibility caution."
+  }
+]
