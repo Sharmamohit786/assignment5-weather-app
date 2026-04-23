@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": "case_1",
+    "baseline_output": "It may rain in Toronto. Carry an umbrella.",
+    "score_relevance": 2,
+    "score_actionability": 2,
+    "score_risk_awareness": 1,
+    "score_clarity": 3,
+    "task_success": false
+  },
+  {
+    "case_id": "case_2",
+    "baseline_output": "Phoenix will be hot and sunny.",
+    "score_relevance": 2,
+    "score_actionability": 1,
+    "score_risk_awareness": 1,
+    "score_clarity": 3,
+    "task_success": false
+  }
+]
