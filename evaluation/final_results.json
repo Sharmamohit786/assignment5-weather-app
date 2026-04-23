@@ -1,0 +1,65 @@
+[
+  {
+    "case_id": "case_1",
+    "final_output": "Toronto is rainy with high humidity and moderate wind. Carry an umbrella, wear shoes with good grip, and be cautious on wet roads.",
+    "score_relevance": 5,
+    "score_actionability": 5,
+    "score_risk_awareness": 4,
+    "score_clarity": 4,
+    "task_success": true
+  },
+  {
+    "case_id": "case_2",
+    "final_output": "Phoenix is extremely hot and sunny. Stay hydrated, avoid prolonged exposure in peak afternoon hours, and wear light clothing with sun protection.",
+    "score_relevance": 5,
+    "score_actionability": 5,
+    "score_risk_awareness": 5,
+    "score_clarity": 4,
+    "task_success": true
+  },
+  {
+    "case_id": "case_3",
+    "final_output": "Vancouver is cool and cloudy. A light jacket is recommended, and outdoor activities remain reasonable with mild caution.",
+    "score_relevance": 4,
+    "score_actionability": 4,
+    "score_risk_awareness": 3,
+    "score_clarity": 4,
+    "task_success": true
+  },
+  {
+    "case_id": "case_4",
+    "final_output": "Miami has thunderstorm conditions with strong wind and high humidity. Avoid unnecessary travel during heavy storm periods and monitor local warnings.",
+    "score_relevance": 5,
+    "score_actionability": 5,
+    "score_risk_awareness": 5,
+    "score_clarity": 4,
+    "task_success": true
+  },
+  {
+    "case_id": "case_5",
+    "final_output": "Calgary is snowy and below freezing. Wear insulated clothing, use caution on slippery surfaces, and expect difficult walking or driving conditions.",
+    "score_relevance": 5,
+    "score_actionability": 5,
+    "score_risk_awareness": 5,
+    "score_clarity": 4,
+    "task_success": true
+  },
+  {
+    "case_id": "case_6",
+    "final_output": "The city could not be found. Please check the spelling and try again with a valid city name.",
+    "score_relevance": 5,
+    "score_actionability": 4,
+    "score_risk_awareness": 3,
+    "score_clarity": 5,
+    "task_success": true
+  },
+  {
+    "case_id": "case_7",
+    "final_output": "London is experiencing mist with very high humidity. Visibility may be reduced, so take extra care while driving or walking near roads.",
+    "score_relevance": 5,
+    "score_actionability": 4,
+    "score_risk_awareness": 4,
+    "score_clarity": 5,
+    "task_success": true
+  }
+]
