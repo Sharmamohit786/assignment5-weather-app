@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "case_6",
+    "failure_reason": "Invalid city input caused weak or unclear response in the earlier version.",
+    "before_fix": "The system returned a vague failure message with little guidance.",
+    "after_fix": "The system now gives a clear user-facing error asking for a valid city name."
+  },
+  {
+    "case_id": "case_7",
+    "failure_reason": "Mist or fog-like conditions were not producing a useful visibility warning in the earlier version.",
+    "before_fix": "The system generated only a generic weather summary.",
+    "after_fix": "The system now adds a visibility caution for mist conditions."
+  }
+]
