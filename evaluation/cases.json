@@ -1,0 +1,100 @@
+[
+  {
+    "id": "case_1",
+    "city": "Toronto",
+    "input_weather": {
+      "temperature_c": 3,
+      "condition": "Rain",
+      "humidity": 88,
+      "wind_kph": 24
+    },
+    "expected_focus": [
+      "umbrella recommendation",
+      "wet road caution"
+    ],
+    "type": "representative"
+  },
+  {
+    "id": "case_2",
+    "city": "Phoenix",
+    "input_weather": {
+      "temperature_c": 41,
+      "condition": "Sunny",
+      "humidity": 15,
+      "wind_kph": 9
+    },
+    "expected_focus": [
+      "hydration advice",
+      "heat warning"
+    ],
+    "type": "representative"
+  },
+  {
+    "id": "case_3",
+    "city": "Vancouver",
+    "input_weather": {
+      "temperature_c": 8,
+      "condition": "Cloudy",
+      "humidity": 76,
+      "wind_kph": 14
+    },
+    "expected_focus": [
+      "light jacket recommendation",
+      "general outdoor advice"
+    ],
+    "type": "representative"
+  },
+  {
+    "id": "case_4",
+    "city": "Miami",
+    "input_weather": {
+      "temperature_c": 34,
+      "condition": "Thunderstorm",
+      "humidity": 82,
+      "wind_kph": 32
+    },
+    "expected_focus": [
+      "storm caution",
+      "travel safety advice"
+    ],
+    "type": "representative"
+  },
+  {
+    "id": "case_5",
+    "city": "Calgary",
+    "input_weather": {
+      "temperature_c": -6,
+      "condition": "Snow",
+      "humidity": 79,
+      "wind_kph": 21
+    },
+    "expected_focus": [
+      "warm clothing advice",
+      "slippery condition warning"
+    ],
+    "type": "representative"
+  },
+  {
+    "id": "case_6",
+    "city": "UnknownCity123",
+    "input_weather": {},
+    "expected_focus": [
+      "graceful error handling"
+    ],
+    "type": "failure"
+  },
+  {
+    "id": "case_7",
+    "city": "London",
+    "input_weather": {
+      "temperature_c": 10,
+      "condition": "Mist",
+      "humidity": 92,
+      "wind_kph": 5
+    },
+    "expected_focus": [
+      "low visibility warning"
+    ],
+    "type": "failure"
+  }
+]
